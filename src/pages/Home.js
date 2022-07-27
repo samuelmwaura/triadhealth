@@ -2,7 +2,10 @@ import React from "react";
 
 function Home(){
     return(
-        <div>This is the triad home page</div>
+        <div className="Home">
+        
+            
+            This is the triad home page</div>
     )
 }
 
