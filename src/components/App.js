@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter,Routes,Route} from "react-router-dom";
+import HealthJournal from "../pages/HealthJournal";
+import Home from '../pages/Home';
+import Hospitals from "../pages/Hopistals";
+import Ranks from "../pages/Ranks";
+import Navbar from "./Navbar";
+
 
 function App(){
-const [toys, setToys]=useState([])
 
-useEffect(()=>{
-    fetch('http://localhost:4000/toys')
-    .then(response=>response.json())
-    .then(data=>setToys(data))
-    .catch(error=>console.log(error))
-})
 return (
-    <div>
-  {toys.map(toy=> <p>{toy.name}</p>)}
-    </div>
+   <BrowserRouter>
+   <Navbar />
+   <Routes>
+   <Route path='/' element={<Home />} />
+   <Route path='/hospitals' element={<Hospitals />}/>
+   <Route path="/healthjournals"  element={<HealthJournal />} />
+   <Route path="/ranks" element={<Ranks />}/>
+   </Routes>
+   </BrowserRouter>
 )
 }
 
