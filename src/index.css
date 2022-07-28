@@ -86,6 +86,30 @@ margin-top:0 ;
   border-radius: 8px;
   
 }
+/*LANDING PAGE FOR HOSPITALS*/
+.landingpage{
+  text-align:center ;
+  align-items: center;
+  padding-top: 0;
+}
+
+
+.landingpage h1{
+font-size: 13em;
+margin-bottom: 0px;
+margin-top: 0px;
+color: brown;
+}
+
+.landingpage .hospitalcard{
+  display:inline-table;  
+}
+
+.landingpage .hospitalSnippets{
+ height: 26em;
+ overflow-y: scroll;
+ padding-top: 15px;
+}
 
 /*ADD A HOSPITAL FORM*/
 .addhospital{

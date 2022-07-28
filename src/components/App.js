@@ -1,10 +1,10 @@
 import React,{useState,useEffect} from "react";
-import { BrowserRouter,Routes,Route} from "react-router-dom";
+import { BrowserRouter,Routes,Route,NavLink} from "react-router-dom";
 import HealthJournal from "../pages/HealthJournal";
 import Home from '../pages/Home';
 import Hospitals from "../pages/Hopistals";
-import Ranks from "../pages/Ranks";
 import Addhospital from "./Addhospital";
+import HospitalCard from "./HospitalCard";
 import HospitalDetails from "./HospitalDetails";
 import Navbar from "./Navbar";
 
@@ -39,12 +39,18 @@ return (
    <Routes>
    <Route path='/' element={<Home />} />
    <Route path='/hospitals' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}> 
-      <Route path="" element={<h3>This is in the hospital landing page </h3>}/>
+      <Route path="" element={
+         <div className="landingpage">
+         <h1>+</h1>
+         <NavLink to={'addhospital'}>Add A hospital</NavLink>
+         <div className="hospitalSnippets">
+            {hospitals.map(hospital=><HospitalCard key={hospital.id} hospital={hospital}/>)}
+         </div>
+         </div>}/>
       <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />
-      <Route path='addhospitals' element={<Addhospital />}/>
+      <Route path='addhospital' element={<Addhospital />}/>
    </Route>
-   <Route path="/healthjournals"  element={<HealthJournal renderedHospitalsOnSearch={renderedHospitalsOnSearch} />} />
-   <Route path="/ranks" element={<Ranks />}/>
+   <Route path="/healthjournals"  element={<HealthJournal hospitals={hospitals} />} />
    </Routes>
    </BrowserRouter>
 )
