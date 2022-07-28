@@ -1,8 +1,19 @@
 import React from "react";
 
-function HealthJournal(){
+function HealthJournal({renderedHospitalsOnSearch}){
   return (
-    <div>This is a hospitals health Journal page</div>
+    <div className="healthjournal">
+      <article>
+        <section>
+        {renderedHospitalsOnSearch.map(hospital=>{
+          return <div key={hospital.id}>
+            <p>{hospital.name}</p>
+            <p>{hospital.health_journal}</p>
+          </div>
+        })}
+        </section>
+      </article>
+    </div>
   )
 }
 

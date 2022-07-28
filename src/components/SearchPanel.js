@@ -1,23 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-function SearchPanel({searchData,setSearchData}){
-
-function handleOnChange(event){
-setSearchData(()=>{
-  for (const key in searchData){
-  if(key !== event.target.name) searchData[key] = ''
-  }
-  return {...searchData,[event.target.name]:event.target.value}
-});
-
-  console.log(searchData);
-  }
+function SearchPanel({filterCriteria,searchText,setfilterCriteria,setSearchText}){
 
 return(
     <div className="searchpanel">
-    <input name='name'  value={searchData.name} onChange={handleOnChange} placeholder="Search by name"/><br/>
-    <input name="service" value={searchData.service} onChange={handleOnChange} placeholder="search by service"/><br/>
-    <input name="rank"value={searchData.rank} onChange={handleOnChange} placeholder="Search by ministry rank"/><br/>
+    <select name='name'  onChange={(event)=>setfilterCriteria(event.target.value)} value={filterCriteria} placeholder="Search by name">
+      <option value='1'>Level 1</option>
+      <option value='2'>Level 2</option>
+      <option value='3'>Level 3</option>
+      <option value='4'>Level 4</option>
+    </select><br/>
+    <input name="service"  onChange={(event)=>setSearchText(event.target.value)} value={searchText} placeholder="search by service"/><br/>
     </div>
 )
 }

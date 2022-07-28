@@ -2,7 +2,7 @@ import React from "react";
 
 function HospitalDetails(){
     return(
-    <div>This is part to shoe details</div>
+    <div>This is part to show details</div>
     )
 }
 

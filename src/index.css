@@ -78,7 +78,7 @@ margin-top:0 ;
   margin-left:30px;
 }
 
-.hospitals .searchpanel input{
+.hospitals .searchpanel input,.hospitals .searchpanel select{
   margin-bottom: 5px;
   width: 19em;
   height: 1.9em;
