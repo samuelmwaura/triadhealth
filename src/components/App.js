@@ -48,7 +48,7 @@ return (
          </div>
          </div>}/>
       <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />
-      <Route path='addhospital' element={<Addhospital />}/>
+      <Route path='addhospital' element={<Addhospital hospitals={hospitals} setHospitals={setHospitals} />}/>
    </Route>
    <Route path="/healthjournals"  element={<HealthJournal hospitals={hospitals} />} />
    </Routes>
