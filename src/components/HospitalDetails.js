@@ -6,7 +6,7 @@ function HospitalDetails({renderedHospitalsOnSearch}){
     const focusedHospital = renderedHospitalsOnSearch.find(hospital=>hospital.id === parseInt(id)); //Get the hospital matching the url param
 
     return(
-    <div className="HospitalDetails">This is part to sho3 sho3 details 
+    <div className="HospitalDetails">
      <h1>{focusedHospital.name}</h1>
      <img src={focusedHospital.image} />        
     </div>
