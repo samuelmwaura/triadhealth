@@ -11,7 +11,7 @@ return(
       <option value='3'>Level 3</option>
       <option value='4'>Level 4</option>
     </select><br/>
-    <input name="service"  onChange={(event)=>setSearchText(event.target.value)} value={searchText} placeholder="search by service"/><br/>
+    <input name="service"  onChange={(event)=>setSearchText(event.target.value)} value={searchText} placeholder="search by name"/><br/>
     </div>
 )
 }

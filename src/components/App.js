@@ -39,7 +39,7 @@ return (
    <Route path='/' element={<Home />} />
    <Route path='/hospitals' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}> 
       <Route path="" element={<h3>This is in the hospital landing page </h3>}/>
-      <Route path=":id" element={<HospitalDetails/>} />
+      <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />
    </Route>
    <Route path="/healthjournals"  element={<HealthJournal renderedHospitalsOnSearch={renderedHospitalsOnSearch} />} />
    <Route path="/ranks" element={<Ranks />}/>
