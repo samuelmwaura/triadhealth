@@ -4,6 +4,7 @@ import HealthJournal from "../pages/HealthJournal";
 import Home from '../pages/Home';
 import Hospitals from "../pages/Hopistals";
 import Ranks from "../pages/Ranks";
+import HospitalDetails from "./HospitalDetails";
 import Navbar from "./Navbar";
 
 
@@ -36,7 +37,10 @@ return (
    <Navbar />
    <Routes>
    <Route path='/' element={<Home />} />
-   <Route path='/hospitals/' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}/>
+   <Route path='/hospitals' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}> 
+      <Route path="" element={<h3>This is in the hospital landing page </h3>}/>
+      <Route path=":id" element={<HospitalDetails/>} />
+   </Route>
    <Route path="/healthjournals"  element={<HealthJournal renderedHospitalsOnSearch={renderedHospitalsOnSearch} />} />
    <Route path="/ranks" element={<Ranks />}/>
    </Routes>

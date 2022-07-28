@@ -7,8 +7,8 @@ function HealthJournal({renderedHospitalsOnSearch}){
         <section>
         {renderedHospitalsOnSearch.map(hospital=>{
           return <div key={hospital.id}>
-            <p>{hospital.name}</p>
-            <p>{hospital.health_journal}</p>
+            
+            <p>{hospital.name} <br/> {hospital.health_journal}</p>
           </div>
         })}
         </section>

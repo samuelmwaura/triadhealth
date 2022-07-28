@@ -6,8 +6,6 @@ return(
     <p>{hospital.name}</p>
     <img src={hospital.image} alt=''/>
     <p>{hospital.ministry_rank}</p>
-    <u>{hospital.services.map((service,index)=><li key={index}>{service}</li>)}</u>
-    
     </div>
 )
 }
