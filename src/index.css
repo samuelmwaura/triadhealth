@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*NAVBAR STYLES*/
 nav {
 height:50px;
 width: 100%;
@@ -27,4 +28,61 @@ nav a{
   border-radius: 8px;
   border-width: 1px;
  
+}
+
+/*HOMEPAGE STYLES.*/
+.home{
+  background-color: blue;
+  height:44vw;
+  text-align: center;
+}
+.home h1{
+font-size: 4em;
+margin-top:0 ;
+}
+/*HOSPITALS PAGE*/
+.hospitals{
+  height:44vw;
+  padding-top: 3px;
+}
+
+.hospitals .hospitallist{
+  overflow-y: scroll;
+  height: 44vw;
+  float: left;
+  
+
+}
+/*HOSPITAL CARD*/
+.hospitalcard{
+  border-style: solid;
+  border-color: brown;
+  border-width: 1px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width:20em;
+  height:19em;
+  margin-left:30px;
+  margin-bottom:5px;
+  padding: 10px;
+  
+}
+
+.hospitalcard img{
+  width: 20em;
+  height:8em
+ }
+ 
+
+.hospitals h2,.hospitals .searchpanel{
+  margin-left:30px;
+}
+
+.hospitals .searchpanel input{
+  margin-bottom: 5px;
+  width: 19em;
+  height: 1.9em;
+  border: 1px solid brown;
+  border-radius: 8px;
+  
 }

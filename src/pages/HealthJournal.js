@@ -2,7 +2,7 @@ import React from "react";
 
 function HealthJournal(){
   return (
-    <div>Thi is a hospitals health Journal page</div>
+    <div>This is a hospitals health Journal page</div>
   )
 }
 
