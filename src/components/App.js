@@ -25,7 +25,7 @@ function App(){
    
    const renderedHospitals = hospitals.filter(hospital=>{
      if(filterCriteria === '') return true;
-     return hospital.ministry_rank === parseInt(filterCriteria);
+     return parseInt(hospital.ministry_rank) === parseInt(filterCriteria);
    });
    
    const renderedHospitalsOnSearch = renderedHospitals.filter(hospital=>{
@@ -41,10 +41,12 @@ return (
    <Route path='/hospitals' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}> 
       <Route path="" element={
          <div className="landingpage">
+         <div className="hospitalSnippets">
+            {hospitals.reverse().map(hospital=><HospitalCard key={hospital.id} hospital={hospital}/>)}
+         </div>
+         <div className="add">
          <h1>+</h1>
          <NavLink to={'addhospital'}>Add A hospital</NavLink>
-         <div className="hospitalSnippets">
-            {hospitals.map(hospital=><HospitalCard key={hospital.id} hospital={hospital}/>)}
          </div>
          </div>}/>
       <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />

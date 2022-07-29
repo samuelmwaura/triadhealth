@@ -20,7 +20,8 @@ text-decoration: none;
 }
 
 nav a{
-  text-decoration: none;  
+  text-decoration: none; 
+  color: white; 
 }
 .active{
   color: aqua;
@@ -109,6 +110,13 @@ color: brown;
  height: 26em;
  overflow-y: scroll;
  padding-top: 15px;
+}
+
+.landingpage .add{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
 }
 
 /*ADD A HOSPITAL FORM*/
