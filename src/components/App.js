@@ -47,7 +47,7 @@ return (
          </div>
          <div className="add">
          <h1>+</h1>
-         <NavLink to={'addhospital'}>Add A hospital</NavLink>
+         <NavLink to={'addhospital'}>New hospital</NavLink>
          </div>
          </div>}/>
       <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />

@@ -166,7 +166,7 @@ font-size: 2em;
 }
 
 .hospitalDetails img{
-  width: 30em;
+  width: 34em;
   height: 23em;
 }
 
@@ -174,5 +174,37 @@ font-size: 2em;
   width:28em;
   height:28em;
   padding-left:5em;
-  margin-left: 56em;
+  margin-left: 60em;
+}
+
+
+.hospitalDetails #hospitalproperties{
+width: 70 em;
+margin-left:25em;
+margin-top:20px;
+padding:10px;
+display: flex;
+justify-content: space-between;
+height:8em;
+}
+
+#hospitalproperties section{
+border:solid brown 1px;
+border-radius: 10px;
+height: auto;
+color: white;
+background-color: brown;
+padding:8px;
+}
+/*HEALTH JOURNAL PAGE*/
+.healthjournal {
+display: flex;
+}
+
+.journalcontent{
+  width: 60em;
+  border: solid brown 1px;
+  margin:5em ;
+  height: 30em;
+  padding: 2em;
 }
