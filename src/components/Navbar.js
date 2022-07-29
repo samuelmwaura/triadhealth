@@ -12,7 +12,7 @@ return (<nav>
 <NavLink to={'/'} style={linkStyles}> Home </NavLink>
 <NavLink to={'/hospitals'} style={linkStyles}>Hospitals</NavLink>
 <Services style={linkStyles} />
-<NavLink to={'/healthjournals'} style={linkStyles}>Health Journals</NavLink>
+<NavLink to={'/healthjournals/'} style={linkStyles}>Health Journals</NavLink>
 </nav>)
 }
 

@@ -7,6 +7,7 @@ import Addhospital from "./Addhospital";
 import HospitalCard from "./HospitalCard";
 import HospitalDetails from "./HospitalDetails";
 import Navbar from "./Navbar";
+import JournalContent from "./JournalContent";
 
 
 function App(){
@@ -52,7 +53,10 @@ return (
       <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />
       <Route path='addhospital' element={<Addhospital hospitals={hospitals} setHospitals={setHospitals} />}/>
    </Route>
-   <Route path="/healthjournals"  element={<HealthJournal hospitals={hospitals} />} />
+   <Route path="/healthjournals"  element={<HealthJournal hospitals={hospitals} />}>
+      <Route path="" element={<JournalContent hospitals={hospitals}/>}/>
+      <Route path=":id" element={<JournalContent hospitals={hospitals}/>}/>
+   </Route>
    </Routes>
    </BrowserRouter>
 )

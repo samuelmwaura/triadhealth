@@ -1,18 +1,17 @@
 import React from "react";
+import { NavLink,Outlet } from "react-router-dom";
 
 function HealthJournal({hospitals}){
   return (
     <div className="healthjournal">
-      <article>
-        <section>
-        {hospitals.map(hospital=>{
-          return <div key={hospital.id}>
-            
-            <p>{hospital.name} <br/> {hospital.health_journal}</p>
-          </div>
-        })}
-        </section>
-      </article>
+      <div>
+      {hospitals.map(hospital=><NavLink key={hospital.id} to={`${hospital.id}`}>{hospital.name} <br/> </NavLink>          
+        )}
+      </div>
+     
+     <Outlet />
+       
+       
     </div>
   )
 }
