@@ -43,18 +43,18 @@ return (
       <Route path="" element={
          <div className="landingpage">
          <div className="hospitalSnippets">
-            {hospitals.reverse().map(hospital=><HospitalCard key={hospital.id} hospital={hospital}/>)}
+            {[...hospitals].reverse().map(hospital=><HospitalCard key={hospital.id} hospital={hospital}/>)}{/**I mutated my original array using this function. It just messed everything. Spread worked magic.   */}
          </div>
          <div className="add">
          <h1>+</h1>
-         <NavLink to={'addhospital'}>New hospital</NavLink>
+         <NavLink to={'addhospital'}>New hospital</NavLink>   {/*When an array is empty, the mapping doesn't happen.Thus none of the components is called.*/}
          </div>
          </div>}/>
-      <Route path=":id" element={<HospitalDetails renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>} />
+      <Route path=":id" element={<HospitalDetails hospitals={hospitals} setHospitals={setHospitals}/>} />
       <Route path='addhospital' element={<Addhospital hospitals={hospitals} setHospitals={setHospitals} />}/>
    </Route>
    <Route path="/healthjournals"  element={<HealthJournal hospitals={hospitals} />}>
-      <Route path="" element={<JournalContent hospitals={hospitals}/>}/>
+      <Route path="" element={<JournalContent hospitals={hospitals}/>}/> {/*when the array is empty, this brings issues because of the clled component.*/}
       <Route path=":id" element={<JournalContent hospitals={hospitals}/>}/>
    </Route>
    </Routes>

@@ -9,18 +9,17 @@ function Home({hospitals}){
         <span>+</span>      
         </div>
         <div id="services">
-        <p className="incard">The bulk stops at us!!<br/>We are an accredited,health services reasearch organisation and connector. Here you can be able to:<br/>
-            <ul>
+            <ul className="incard">
+            <p >The bulk stops at us!!<br/>We are an accredited,health services reasearch organisation and connector. Here you can be able to:"</p>
                 <li>Pursue a Specialised service Hospital.</li>
                 <li>View the hospital details.</li>
                 <li>Book an appointment in Hospital.</li>
                 <li>Read a specialised service journal.</li>
                 <li>Explore a myriad of hospitals.</li>
             </ul>
-        </p>
 
         <ul className="incard" id="incard">
-        Our Assortmented services.
+        Our Assortment of services.
            {hospitals.map(hospital=><li key={hospital.key}><Link to={`/hospitals/${hospital.id}`}>{hospital.service}</Link></li>)}
         </ul>
         </div>

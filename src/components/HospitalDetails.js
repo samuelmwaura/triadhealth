@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-function HospitalDetails({renderedHospitalsOnSearch}){
+function HospitalDetails({hospitals,setHospitals}){
     const {id}= useParams(); // destructures the params in the url
-    let focusedHospital = renderedHospitalsOnSearch.find(hospital=>hospital.id === parseInt(id)); //Get the hospital matching the url param
-
-    const [currentHospital,setCurrentHospital] = useState(focusedHospital);
-    const [appointmentData,setAppointmentData] = useState({
-        firstname:'',
-        secondname:'',
-        frequent:'',
-        service:'',
-        date:''
-    });
+    const currentHospital = hospitals.find(hospital=>hospital.id === parseInt(id)); //Get the hospital matching the url param from all hospitals
+     
+    const [appointmentData,setAppointmentData] = useState({firstname:'',secondname:'',frequent:'',service:'', date:''});
 
     function handleOnchange(event){ 
        setAppointmentData({...appointmentData,[event.target.name]:event.target.value})
@@ -31,11 +24,18 @@ function HospitalDetails({renderedHospitalsOnSearch}){
     })
     .then(response=>response.json())
     .then(data=>{
-        setCurrentHospital(data)
+        //Updating the global state of all hospitals to enable a rerender.
+        setHospitals(()=>{  //The thing is that you hve to have new array that you will update state with
+           return  hospitals.map(hospital=>{// After PATCH a new array is generated using map.
+                if(hospital.id === data.id) return data;
+                return hospital;
+            });
+        })
         setAppointmentData({firstname:'',secondname:'',frequent:'',service:'',date:''})})
     .catch(error=>console.log(error))
     }
 
+    if(!currentHospital) return <p>Loading Hospital Details</p>
     return(
     <div className="hospitalDetails">
      <div>
@@ -60,7 +60,7 @@ function HospitalDetails({renderedHospitalsOnSearch}){
         <label></label><input type='submit' />
      </form>
      <section id="hospitalproperties">
-     <section><h3>Our Specialisation</h3>{currentHospital.service}</section>
+     <section><h3>Level {currentHospital.ministry_rank}</h3><h3>Our Specialisation</h3>{currentHospital.service}</section>
      <section><h4>Approved Pricing Model</h4>{currentHospital.pricing_model}</section>
      <section><h4>Treatment Schedule</h4>{currentHospital.treatment_schedule}</section>
      <section>

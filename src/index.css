@@ -73,10 +73,10 @@ font-size:1.2em;
 width:22.8em;
 border:1px solid brown ;
 border-radius: 8px;
-padding: .2em;
+padding:em;
 padding-top: 1em;
 padding-bottom: 1em;
-margin-left: 3em;
+margin-left:2.3em;
 text-align: left;
 }
 
@@ -162,7 +162,7 @@ color: brown;
 }
 
 .landingpage .hospitalSnippets{
- height: 26em;
+ height: 26.5em;
  overflow-y: scroll;
  padding-top: 15px;
 }
