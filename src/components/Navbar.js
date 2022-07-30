@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Services from "./Services";
 
 
 function Navbar(){
@@ -11,7 +10,6 @@ const linkStyles ={
 return (<nav>
 <NavLink to={'/'} style={linkStyles}> Home </NavLink>
 <NavLink to={'/hospitals'} style={linkStyles}>Hospitals</NavLink>
-<Services style={linkStyles} />
 <NavLink to={'/healthjournals/'} style={linkStyles}>Health Journals</NavLink>
 </nav>)
 }

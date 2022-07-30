@@ -38,7 +38,7 @@ return (
    <BrowserRouter>
    <Navbar />
    <Routes>
-   <Route path='/' element={<Home />} />
+   <Route path='/' element={<Home hospitals={hospitals}/>} />
    <Route path='/hospitals' element={<Hospitals filterCriteria={filterCriteria} searchText={searchText} setfilterCriteria={setfilterCriteria} setSearchText={setSearchText} renderedHospitalsOnSearch={renderedHospitalsOnSearch}/>}> 
       <Route path="" element={
          <div className="landingpage">

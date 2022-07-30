@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 
 function HospitalDetails({renderedHospitalsOnSearch}){
     const {id}= useParams(); // destructures the params in the url
-    const focusedHospital = renderedHospitalsOnSearch.find(hospital=>hospital.id === parseInt(id)); //Get the hospital matching the url param
-    
+    let focusedHospital = renderedHospitalsOnSearch.find(hospital=>hospital.id === parseInt(id)); //Get the hospital matching the url param
+
     const [currentHospital,setCurrentHospital] = useState(focusedHospital);
     const [appointmentData,setAppointmentData] = useState({
         firstname:'',
@@ -57,7 +57,7 @@ function HospitalDetails({renderedHospitalsOnSearch}){
         <option value='repeat'>Repeat</option>
         </select><br/>
         <label>Appointment Date</label><input type='date' name="date" onChange={handleOnchange} value={appointmentData.date}/><br/>
-        <input type='submit' />
+        <label></label><input type='submit' />
      </form>
      <section id="hospitalproperties">
      <section><h3>Our Specialisation</h3>{currentHospital.service}</section>

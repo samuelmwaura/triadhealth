@@ -31,9 +31,10 @@ fetch('http://localhost:4000/hospitals',{
 })
 .then(response=>response.json())
 .then(data=>{
-   //setHospitals({...hospitals,data})
-   //setNewHospitalData({name: "",image: "",ministry_rank:0, service: "",treatment_schedule:"", pricing_model:"",health_journal: ""})
    navigate('/hospitals')
+   setHospitals([...hospitals,data] )
+   //setNewHospitalData({name: "",image: "",ministry_rank:0, service: "",treatment_schedule:"", pricing_model:"",health_journal: ""})
+   
    console.log(data)})
    
 .catch(error=>console.log(error))
@@ -67,7 +68,7 @@ return (
         <option value='All'>All</option>
      </select><br/>
      <label>Hospital Journals: </label><textarea name="health_journal" placeholder="Type the journal snippet here" onChange={handleFormInputChange} value={newHospitalData.health_journal}/><br/>
-     <input type="submit"/>
+     <label></label><input type="submit"/>
 
 
      </div>
