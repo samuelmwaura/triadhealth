@@ -14,7 +14,7 @@ function HospitalDetails({hospitals,setHospitals}){
     function handleAppointmentSubmit(event){
     event.preventDefault()
     const newArray=[...currentHospital.appointments,appointmentData]
-    fetch(`http://localhost:4000/hospitals/${currentHospital.id}`,{
+    fetch(`https://triadhealthsonserver.herokuapp.com/hospitals/${currentHospital.id}`,{
         method:'PATCH',
         headers:{
             'Content-Type':'Application/json',

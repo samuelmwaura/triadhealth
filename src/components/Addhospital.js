@@ -21,7 +21,7 @@ setNewHospitalData({...newHospitalData,[event.target.name]:event.target.value});
 
 function handleSubmit(event){
 event.preventDefault()
-fetch('http://localhost:4000/hospitals',{
+fetch('https://triadhealthsonserver.herokuapp.com/hospitals',{
    method:'POST',
    headers:{
       'Content-Type':'Application/json',

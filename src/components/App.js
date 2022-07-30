@@ -17,7 +17,7 @@ function App(){
    
    
    useEffect((()=>{
-    fetch('http://localhost:4000/hospitals')
+    fetch('https://triadhealthsonserver.herokuapp.com/hospitals')
     .then(response=>response.json())
     .then(data=>setHospitals(data))
     .catch(error=>console.log(error))
