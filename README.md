@@ -25,7 +25,7 @@ The following are the technologies that have been used to realize this project:
    
 This project is hosted in a model of halves. The frontend that is built using React.js is hosted on `Netlify` while the support `Json server` is hosted on `Heroku`.
 
-The project can be accessed live at [Triad Health.](https://velvety-trifle-2b215c.netlify.app/).
+The project can be accessed live at [Triad Health.](https://triadhealth.netlify.app/).
 
   ## Get a copy/ personify.
 
