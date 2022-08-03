@@ -21,6 +21,11 @@ The following are the technologies that have been used to realize this project:
   3. Javascript.
   3. A Rest Server.
 
+
+The project React UI demonstrates the use of events, state, props and independent components to come up with a modular UI in React Js. It further incorporates a unique react feature i.e client side routing that provides for routing handled at the front end. The project further demontsrates the use of nested routing to create child routes within a main route in order to achieve a quite definite structure of routes.
+
+The project uses several hooks in the react-router-dom to demonstate dynamic routing and appending dynamic data in URLs and later accessing it using the useParams hook.
+
 ## Accessing the hosted project.
    
 This project is hosted in a model of halves. The frontend that is built using React.js is hosted on `Netlify` while the support `Json server` is hosted on `Heroku`.
